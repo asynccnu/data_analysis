@@ -23,3 +23,9 @@ make
 ```
 make test
 ```
+
+### change
+
+此服务使用了go mod
+- 修改了config里conf的路径
+- 使用时修改config.yaml内的influxDB.addr, 并且按需修改config.go里的path

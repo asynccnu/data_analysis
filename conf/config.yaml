@@ -18,3 +18,6 @@ db:  # DB 配置 部署时环境变量覆盖
   addr: 0.0.0.0:3306
   username: root
   password:
+influxDB: #influxdb 配置
+  name: insight
+  addr: http://0.0.0.0:8086 #要加端口

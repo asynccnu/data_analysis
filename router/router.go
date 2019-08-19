@@ -3,6 +3,7 @@ package router
 import (
 	"net/http"
 
+	"github.com/asynccnu/data_analysis_service_v1/handler/insight"
 	"github.com/asynccnu/data_analysis_service_v1/handler/sd"
 	"github.com/asynccnu/data_analysis_service_v1/handler/user"
 	"github.com/asynccnu/data_analysis_service_v1/router/middleware"
@@ -46,5 +47,10 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/ram", sd.RAMCheck)
 	}
 
+	// The data_analysis handlers
+	ins := g.Group("/v1/insight")
+	{
+		ins.GET("/pv", insight.Pv)
+	}
 	return g
 }
