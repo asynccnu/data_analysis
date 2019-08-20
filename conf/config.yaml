@@ -20,4 +20,4 @@ db:  # DB 配置 部署时环境变量覆盖
   password:
 influxDB: #influxdb 配置
   name: insight
-  addr: http://0.0.0.0:0 #要加端口
+  addr: http:// #要加端口
