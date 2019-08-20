@@ -12,10 +12,9 @@ func sql2json(sql string) (json string) {
 	var (
 		hostname = viper.GetString("influxDB.addr") + "/query?"
 		dbname   = "db=" + "insight" + "&"
-		chunked  = "chunked=1000&"
 	)
 	sqlUrl := url.PathEscape(sql)
-	encodeUrl := hostname + dbname + chunked + sqlUrl
+	encodeUrl := hostname + dbname + sqlUrl
 	resp, err := http.Get(encodeUrl)
 	if err != nil {
 		log.Fatal("http get wrong", err)

@@ -51,6 +51,7 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 	ins := g.Group("/v1/insight")
 	{
 		ins.GET("/pv", insight.Pv)
+		ins.GET("/error", insight.Error)
 	}
 	return g
 }
